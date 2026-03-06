@@ -183,15 +183,13 @@ function About() {
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            {/* Photo Placeholder */}
-            <div className="bg-gradient-to-br from-slate to-navy h-[500px] flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-gold text-xs tracking-[0.35em] uppercase font-medium mb-2">
-                  Leadership
-                </p>
-                <p className="font-cormorant text-3xl text-white">Giuseppe Funaro</p>
-                <p className="text-white/60 text-sm mt-2">Founder & CEO</p>
-              </div>
+            {/* Photo */}
+            <div className="h-[500px] overflow-hidden">
+              <img
+                src="/images/giuseppe-funaro.jpg"
+                alt="Giuseppe Funaro - Founder & CEO"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Bio Text */}
