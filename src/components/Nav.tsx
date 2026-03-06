@@ -42,40 +42,42 @@ function Nav() {
 
           {/* About Dropdown */}
           <div
-            className="relative"
+            className="relative group"
             onMouseEnter={() => setAboutDropdownOpen(true)}
             onMouseLeave={() => setAboutDropdownOpen(false)}
           >
             <button
               onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
-              className="font-jost text-xs tracking-[0.15em] uppercase font-medium text-navy hover:text-gold transition-colors flex items-center gap-1"
+              className="font-jost text-xs tracking-[0.15em] uppercase font-medium text-navy hover:text-gold transition-colors flex items-center gap-1 py-2"
             >
               About
               <span className="text-[10px]">▼</span>
             </button>
             {aboutDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white shadow-xl border border-gray-200 py-2 min-w-[200px] z-50 rounded">
-                <Link
-                  to="/about#overview"
-                  onClick={() => setAboutDropdownOpen(false)}
-                  className="block w-full text-left px-4 py-2 text-xs tracking-wider uppercase font-medium text-navy hover:bg-cream hover:text-gold transition-colors"
-                >
-                  Overview
-                </Link>
-                <Link
-                  to="/about#capabilities"
-                  onClick={() => setAboutDropdownOpen(false)}
-                  className="block w-full text-left px-4 py-2 text-xs tracking-wider uppercase font-medium text-navy hover:bg-cream hover:text-gold transition-colors"
-                >
-                  Capabilities
-                </Link>
-                <Link
-                  to="/about#faqs"
-                  onClick={() => setAboutDropdownOpen(false)}
-                  className="block w-full text-left px-4 py-2 text-xs tracking-wider uppercase font-medium text-navy hover:bg-cream hover:text-gold transition-colors"
-                >
-                  FAQs
-                </Link>
+              <div className="absolute top-full left-0 pt-2 z-50">
+                <div className="bg-white shadow-xl border border-gray-200 py-2 min-w-[200px] rounded">
+                  <Link
+                    to="/about#overview"
+                    onClick={() => setAboutDropdownOpen(false)}
+                    className="block w-full text-left px-6 py-3 text-xs tracking-wider uppercase font-medium text-navy hover:bg-cream hover:text-gold transition-colors"
+                  >
+                    Overview
+                  </Link>
+                  <Link
+                    to="/about#capabilities"
+                    onClick={() => setAboutDropdownOpen(false)}
+                    className="block w-full text-left px-6 py-3 text-xs tracking-wider uppercase font-medium text-navy hover:bg-cream hover:text-gold transition-colors"
+                  >
+                    Capabilities
+                  </Link>
+                  <Link
+                    to="/about#faqs"
+                    onClick={() => setAboutDropdownOpen(false)}
+                    className="block w-full text-left px-6 py-3 text-xs tracking-wider uppercase font-medium text-navy hover:bg-cream hover:text-gold transition-colors"
+                  >
+                    FAQs
+                  </Link>
+                </div>
               </div>
             )}
           </div>
