@@ -2,12 +2,11 @@
 // through Resend. Requires the RESEND_API_KEY environment variable, set in
 // Netlify under Site configuration > Environment variables.
 //
-// FROM must be an address on a domain verified in Resend. 1402celsius.com must
-// therefore be added and verified in Resend (Domains > Add Domain, then publish
-// the DKIM and SPF records it gives you on the 1402celsius.com DNS). Until that
-// verification is green, Resend rejects the send and the form returns a 502.
+// FROM must be an address on a domain verified in Resend. ponte.trade is
+// verified and sending-enabled. Once 1402celsius.com is verified in Resend too,
+// change FROM to "1402 Celsius <web@1402celsius.com>".
 
-const FROM = '1402 Celsius <web@1402celsius.com>';
+const FROM = '1402 Celsius <web@ponte.trade>';
 const TO = ['info@1402celsius.com'];
 
 const clean = (s) => String(s == null ? '' : s).slice(0, 4000).trim();
