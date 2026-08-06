@@ -1,6 +1,29 @@
+# Static site. No build step: the whole site is one HTML file with inlined
+# CSS, fonts and JS, published from site/.
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "echo 'static site, nothing to build'"
+  publish = "site"
+  functions = "netlify/functions"
+
+# Contact form -> serverless function. Must come before the SPA catch-all.
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/posts"
+  to = "/#work"
+  status = 302
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/contact"
+  to = "/#contact"
+  status = 302
 
 [[redirects]]
   from = "/*"
@@ -10,9 +33,18 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-  for = "/assets/*"
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/brand/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
