@@ -9,15 +9,11 @@ function Nav() {
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-4">
-          {/* Logo Image (if available) */}
+          {/* Logo Mark */}
           <img
-            src="/images/logo.png"
-            alt="1402 Celsius"
-            className="h-16 w-auto object-contain"
-            onError={(e) => {
-              // Hide image if not found
-              e.currentTarget.style.display = 'none'
-            }}
+            src="/images/logo.svg"
+            alt=""
+            className="h-14 w-auto object-contain"
           />
           {/* Text Logo */}
           <div className="flex flex-col">

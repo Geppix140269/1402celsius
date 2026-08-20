@@ -8,7 +8,13 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Left: Logo + Description */}
           <div>
-            <Link to="/" className="flex flex-col mb-6">
+            <Link to="/" className="flex items-center gap-4 mb-6">
+              <img
+                src="/images/logo-light.svg"
+                alt=""
+                className="h-12 w-auto object-contain"
+              />
+              <div className="flex flex-col">
               <div className="flex items-baseline gap-1">
                 <span className="font-cormorant text-4xl font-semibold text-cream">1402</span>
                 <span className="font-jost text-base tracking-[0.2em] text-cream font-medium">CELSIUS</span>
@@ -16,6 +22,7 @@ function Footer() {
               <span className="font-jost text-[0.5rem] tracking-[0.3em] text-gold uppercase">
                 Empowering Connections
               </span>
+              </div>
             </Link>
             <p className="text-sm text-white/60 leading-relaxed font-light">
               A dynamic international procurement and sales company connecting global markets with high-quality

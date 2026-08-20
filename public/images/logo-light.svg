@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="1402 Celsius">
+  <defs>
+    <linearGradient id="c1402-steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="22%" stop-color="#cbd4d9"/>
+      <stop offset="48%" stop-color="#7d8b93"/>
+      <stop offset="70%" stop-color="#dee5e9"/>
+      <stop offset="100%" stop-color="#6e7c84"/>
+    </linearGradient>
+    <linearGradient id="c1402-gold" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c08e4a"/>
+      <stop offset="30%" stop-color="#e3b779"/>
+      <stop offset="58%" stop-color="#c8944e"/>
+      <stop offset="100%" stop-color="#a97b3c"/>
+    </linearGradient>
+    <path id="c1402-ring" d="M200 150 m-155 0 a155 68 0 1 0 310 0 a155 68 0 1 0 -310 0"/>
+    <clipPath id="c1402-front"><rect x="110" y="165" width="150" height="135"/></clipPath>
+  </defs>
+
+  <g fill="none">
+    <!-- Gold ring, tilted up to the right -->
+    <g transform="rotate(-32 200 150)">
+      <use href="#c1402-ring" stroke="url(#c1402-gold)" stroke-width="30"/>
+    </g>
+
+    <!-- Steel ring, tilted down to the right, crossing in front -->
+    <g transform="rotate(32 200 150)">
+      <use href="#c1402-ring" stroke="url(#c1402-steel)" stroke-width="30"/>
+    </g>
+
+    <!-- Weave: the gold ring returns to the front at the lower crossing.
+         Redrawn identically, so only the steel band is covered - no seam. -->
+    <g clip-path="url(#c1402-front)">
+      <g transform="rotate(-32 200 150)">
+        <use href="#c1402-ring" stroke="url(#c1402-gold)" stroke-width="30"/>
+      </g>
+    </g>
+  </g>
+</svg>
