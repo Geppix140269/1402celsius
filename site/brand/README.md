@@ -1,13 +1,21 @@
 # Brand assets
 
+`symbol.png` is the **authority asset** — the supplied render, unretouched.
+Only fully-transparent-margin cropping was applied; no pixel of the symbol
+is altered. Everything on the site is generated from it by resizing alone:
+no redrawing, no vector reconstruction, no colour or sharpening passes.
+
 | File | Use |
 |---|---|
-| `mark-dark.png` | The mark for **dark** backgrounds. Rendered on black with the glow baked in — composite it with `mix-blend-mode: screen` so it sits on the page ground with no visible edge. Used in the site header and footer. |
-| `mark-light.png` | The mark for **light** backgrounds (transparent PNG). Not used on this site; here for documents, decks and email. |
-| `wordmark.png` | "1402 Celsius" logotype, transparent PNG. Dark metal, so it needs a **light** background — it goes muddy on the dark site. |
+| `symbol.png` | Authority master, 697×635, transparent. Source for every other size. |
+| `symbol-240.png` | Header and footer lockup (displayed at 44×40). |
+| `wordmark.png` | "1402 Celsius" logotype. Dark metal — needs a **light** background. Not used on this site. |
 
-Every icon on the site is generated from the real artwork — there is no
-vector stand-in. Favicons are cut tight to the mark and unsharp-masked to
-hold definition when downscaled; the 16px one is still soft, which is a
-limit of the artwork, not the pipeline. See the repo notes on what a
-purpose-drawn small-size mark would fix.
+The symbol is transparent, so it composites on any ground and needs no
+blend mode. Favicons (16/32/64) are transparent; app icons (192/512) sit on
+the dark rounded tile.
+
+The supplied `1402celsius_symbol_editable.svg` is **not** used — it is a
+three-band reconstruction that does not match the authority. The supplied
+`_exact.svg` is this same PNG wrapped in an SVG container, so the PNG is
+stored directly instead.
