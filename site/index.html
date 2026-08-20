@@ -67,7 +67,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(10,12,17,.9);backdrop-fi
   border-bottom:1px solid var(--r1)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:60px}
 .brand{display:flex;align-items:center;gap:10px}
-.glyph{width:26px;height:26px;border:1px solid var(--r2);border-radius:8px;display:grid;place-items:center;flex:none}
+.glyph{width:32px;height:24px;display:grid;place-items:center;flex:none}
 .bn{font-family:"Playfair Display",serif;font-size:19px;color:var(--fg);letter-spacing:-.02em}
 .bn em{font-style:normal;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mut);margin-left:7px;letter-spacing:0}
 nav{display:flex;align-items:center;gap:26px}
@@ -203,6 +203,38 @@ footer li a:hover{color:var(--fg)}
 <script>document.documentElement.className+=' js'</script>
 <body>
 
+<!-- Brand mark: two interlocking rings. Defined once, referenced in the
+     header and the footer. Gradients use the site palette so the mark
+     reads on the dark ground. -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <defs>
+    <linearGradient id="mk-steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="24%" stop-color="#f2efe8"/>
+      <stop offset="50%" stop-color="#8e959b"/>
+      <stop offset="72%" stop-color="#e6e3dc"/>
+      <stop offset="100%" stop-color="#767d84"/>
+    </linearGradient>
+    <linearGradient id="mk-gold" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b4873c"/>
+      <stop offset="30%" stop-color="#e7c173"/>
+      <stop offset="58%" stop-color="#d9ac55"/>
+      <stop offset="100%" stop-color="#a67c33"/>
+    </linearGradient>
+    <path id="mk-ring" d="M200 150 m-152 0 a152 66 0 1 0 304 0 a152 66 0 1 0 -304 0"/>
+    <clipPath id="mk-front"><rect x="110" y="165" width="150" height="135"/></clipPath>
+    <symbol id="mk" viewBox="0 0 400 300">
+      <g fill="none">
+        <g transform="rotate(-32 200 150)"><use href="#mk-ring" stroke="url(#mk-gold)" stroke-width="34"/></g>
+        <g transform="rotate(32 200 150)"><use href="#mk-ring" stroke="url(#mk-steel)" stroke-width="34"/></g>
+        <g clip-path="url(#mk-front)">
+          <g transform="rotate(-32 200 150)"><use href="#mk-ring" stroke="url(#mk-gold)" stroke-width="34"/></g>
+        </g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
 <div class="tick">
   <div class="row">
     <s><i>Desk</i><b>London</b> · United Kingdom</s>
@@ -222,11 +254,7 @@ footer li a:hover{color:var(--fg)}
  <div class="pad bar">
   <a class="brand" href="#top">
     <span class="glyph">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="8.5" stroke="#F2EFE8" stroke-opacity=".55" stroke-width="1"/>
-        <path d="M2.5 12h19" stroke="#D9AC55" stroke-width="1"/>
-        <circle cx="17.2" cy="12" r="1.7" fill="#D9AC55"/>
-      </svg>
+      <svg width="32" height="24" viewBox="0 0 400 300"><use href="#mk"/></svg>
     </span>
     <span class="bn">1402<em>celsius</em></span>
   </a>
@@ -465,10 +493,7 @@ footer li a:hover{color:var(--fg)}
   <div class="fg">
     <div>
       <div class="brand" style="margin-bottom:18px">
-        <span class="glyph"><svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="8.5" stroke="#F2EFE8" stroke-opacity=".55" stroke-width="1"/>
-          <path d="M2.5 12h19" stroke="#D9AC55" stroke-width="1"/>
-          <circle cx="17.2" cy="12" r="1.7" fill="#D9AC55"/></svg></span>
+        <span class="glyph"><svg width="32" height="24" viewBox="0 0 400 300"><use href="#mk"/></svg></span>
         <span class="bn">1402<em>celsius</em></span>
       </div>
       <p class="m" style="max-width:42ch">Global trade consultancy and procurement. We open markets for manufacturers and secure vetted supply for buyers.</p>
